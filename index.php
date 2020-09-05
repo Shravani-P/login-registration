@@ -236,23 +236,17 @@ a {
         $rows = mysqli_num_rows($res);
         
         if ($rows >= 1) { 
-//            echo "<div class='form'>
-//                  <h3>You are already a member please login.</h3><br/>
-//                  </div>";
+
             $resultStatement="You are already a member please login.";
         }else{
                 $query    = "INSERT into `users` (username, password, email, create_datetime)
                      VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
         $result   = mysqli_query($con, $query);
         if ($result) {
-//            echo "<div class='form'>
-//                  <h6>You are registered successfully.</h6><br/>
-//                  </div>";
+
              $resultStatement="You are registered successfully.";
         } else {
-//            echo "<div class='form'>
-//                  <h6>Required fields are missing.</h6><br/>
-//                  </div>";
+
              $resultStatement="Required fields are missing.";
         }
         }
@@ -269,14 +263,10 @@ a {
         $result = mysqli_query($con, $query) or die(mysql_error());
         $rows = mysqli_num_rows($result);
         if ($rows == 1) {
-//             echo "<div class='form'>
-//                  <h6>You are logged successfully.</h6><br/>
-//                  </div>";
+
              $resultStatement="You are logged in successfully.";
         } else {
-//            echo "<div class='form'>
-//                  <h6>Incorrect Username/password. Try loggin again</h6><br/>
-//                  </div>";
+
             $resultStatement="Incorrect Username/password. Try loggin again";
         }
     }
